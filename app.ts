@@ -1,6 +1,21 @@
 type Combinable = number | string;
 type ConversionDescriptor = 'as-number' | 'as-text';
 
+type User = { name: string; age: number };
+function greet(user: User) {
+  console.log(`Hi, I am ${user.name}`);
+}
+
+function isOlder(user: User, checkAge: number) {
+  console.log(checkAge > user.age);
+  return checkAge > user.age;
+}
+
+let user1: User = { name: 'Kevin', age: 26 }
+
+greet(user1)
+isOlder(user1, 25)
+
 function combine(input1: Combinable, input2: Combinable, resultConverison: ConversionDescriptor) {
   let result
   if (typeof input1 === 'number' && typeof input2 === 'number' || resultConverison === 'as-number') {
