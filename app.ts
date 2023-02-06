@@ -1,17 +1,20 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  if (showResult) {
-    const result = n1 + n2
-    console.log(phrase + result);
-  } else {
-    return n1 + n2
-  }
+const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+} = {
+  name: 'Kevin',
+  age: 26,
+  hobbies: ['Sports', 'Cooking']
 }
 
-let number1: number
-number1 = 5
-const number2 = 2.8
-const printResult = true
-const resultPhrase = 'Result is: '
+let favoriteActivities: string[]
+let randomArray: any[]
+favoriteActivities = ['Sports']
+randomArray = ['Words', 1, true]
 
-add(number1, number2, printResult, resultPhrase)
+console.log(person.name);
 
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase());
+}
