@@ -13,3 +13,8 @@ function generateError(message: string, code: number): never {
 }
 
 generateError('An error occurred!', 500)
+
+// tsc app.ts -w
+// or
+// tsc app.ts --watch
+// checks for changes automatically and will recompile
