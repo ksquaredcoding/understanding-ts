@@ -1,41 +1,15 @@
-type Combinable = number | string;
-type ConversionDescriptor = 'as-number' | 'as-text';
-
-type User = { name: string; age: number };
-function greet(user: User) {
-  console.log(`Hi, I am ${user.name}`);
+function add(n1: number, n2: number) {
+  return n1 + n2
 }
 
-function isOlder(user: User, checkAge: number) {
-  console.log(checkAge > user.age);
-  return checkAge > user.age;
+function printResult(num: number) {
+  console.log('Result: ' + num);
 }
 
-let user1: User = { name: 'Kevin', age: 26 }
+printResult(add(5, 12))
 
-greet(user1)
-isOlder(user1, 25)
+let combineValues: (a: number, b: number) => number;
 
-function combine(input1: Combinable, input2: Combinable, resultConverison: ConversionDescriptor) {
-  let result
-  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConverison === 'as-number') {
-    result = +input1 + +input2
-  } else {
-    result = input1.toString() + input2.toString()
-  }
-  // if (resultConverison === 'as-number') {
-  //   return +result;
-  // } else {
-  //   return result.toString();
-  // }
-  return result
-}
+combineValues = add;
 
-const combinedAges = combine(26, 22, 'as-number')
-console.log(combinedAges);
-
-const combinedStringAges = combine('26', '22', 'as-number')
-console.log(combinedStringAges);
-
-const combinedNames = combine('Kevin', 'Val', 'as-text');
-console.log(combinedNames);
+console.log(combineValues(8, 8));
