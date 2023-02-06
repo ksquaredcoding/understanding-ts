@@ -7,3 +7,9 @@ if (typeof userInput === 'string') {
   userName = userInput
 }
 
+// never type means the function will NEVER have a return value, whereas void type can
+function generateError(message: string, code: number): never {
+  throw { message: message, errorCode: code }
+}
+
+generateError('An error occurred!', 500)
