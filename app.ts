@@ -1,34 +1,15 @@
-enum Role { ADMIN, READ_ONLY, AUTHOR };
-
-const person
-  // : {
-  // name: string;
-  // age: number;
-  // hobbies: string[];
-  // role: [number, string];
-  // }
-  = {
-  name: 'Kevin',
-  age: 26,
-  hobbies: ['Sports', 'Cooking'],
-  role: Role.ADMIN
-}
-// can't reassing types, but can add into array. at least one problem fixed
-// person.role[1] = 10
-// person.role.push('admin')
-console.log(person.role);
-
-let favoriteActivities: string[]
-let randomArray: any[]
-favoriteActivities = ['Sports']
-randomArray = ['Words', 1, true]
-
-console.log(person.name);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
+function combine(input1: number | string, input2: number | string) {
+  let result
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2
+  } else {
+    result = input1.toString() + input2.toString()
+  }
+  return result;
 }
 
-if (person.role === Role.ADMIN) {
-  console.log('is admin');
-}
+const combinedAges = combine(26, 22)
+console.log(combinedAges);
+
+const combinedNames = combine('Kevin', 'Val');
+console.log(combinedNames);
